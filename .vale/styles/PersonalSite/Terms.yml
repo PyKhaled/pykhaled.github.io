@@ -1,0 +1,10 @@
+extends: substitution
+message: "Use '%s' instead of '%s'."
+level: warning
+ignorecase: false
+swap:
+  Github: GitHub
+  Gitlab: GitLab
+  Javascript: JavaScript
+  Typescript: TypeScript
+  Postgres: PostgreSQL

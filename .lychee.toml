@@ -1,0 +1,13 @@
+verbose = "info"
+no_progress = true
+max_retries = 2
+retry_wait_time = 2
+accept = [200, 204, 206, 301, 302, 307, 308, 429]
+exclude = [
+  "^mailto:",
+  "^tel:",
+  "example\\.com",
+  "example\\.invalid",
+  "localhost",
+  "127\\.0\\.0\\.1"
+]

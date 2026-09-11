@@ -1,0 +1,52 @@
+name: Content Quality
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  content-quality:
+    name: Markdown, spelling, style, and article validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install content tools
+        run: npm install --global markdownlint-cli2 cspell
+
+      - name: Markdown lint
+        run: markdownlint-cli2 "**/*.md" "#public/**" "#themes/**" "#node_modules/**"
+
+      - name: Spell check
+        run: cspell "content/**/*.md" "README.md" --no-progress
+
+      - name: Validate Hugo articles
+        run: python3 scripts/validate_content.py content
+
+  vale:
+    name: Editorial style (Vale)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Vale
+        uses: errata-ai/vale-action@v2
+        with:
+          files: content
+          fail_on_error: false
