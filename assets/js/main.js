@@ -28,22 +28,26 @@
     return {};
   };
 
-  const classifyOutboundLink = (url) => {
+  const classifyTrackedLink = (url, context) => {
     const hostname = url.hostname.toLowerCase();
 
     if (hostname === "github.com" || hostname.endsWith(".github.com")) {
-      return "github_click";
+      return context.content_type === "projects"
+        ? "github_project_click"
+        : "github_click";
     }
 
     if (hostname === "medium.com" || hostname.endsWith(".medium.com")) {
-      return "medium_click";
+      return context.content_type === "blog"
+        ? "medium_article_click"
+        : "medium_click";
     }
 
     if (hostname === "linkedin.com" || hostname.endsWith(".linkedin.com")) {
       return "linkedin_click";
     }
 
-    return "outbound_link_click";
+    return null;
   };
 
   document.addEventListener("click", (event) => {
@@ -84,12 +88,19 @@
     const targetHost = url.hostname.toLowerCase();
 
     if (targetHost && targetHost !== currentHost) {
-      sendEvent(classifyOutboundLink(url), {
-        link_url: url.href,
-        link_domain: targetHost,
-        link_text: (link.textContent || "").trim().slice(0, 100),
-        ...context,
-      });
+      const eventName = classifyTrackedLink(url, context);
+
+      // GA4 Enhanced Measurement already records generic outbound clicks.
+      // Send custom events only for professional-network destinations we care about.
+      if (eventName) {
+        sendEvent(eventName, {
+          link_url: url.href,
+          link_domain: targetHost,
+          link_text: (link.textContent || "").trim().slice(0, 100),
+          ...context,
+        });
+      }
+
       return;
     }
 
