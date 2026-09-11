@@ -5,6 +5,15 @@
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
 
+    {{ if eq .Section "projects" }}
+      {{ with .Params.project_status }}<p class="eyebrow">{{ . }}</p>{{ end }}
+      {{ with .Params.github }}
+      <div class="actions">
+        <a class="button" href="{{ . }}" rel="noopener">View on GitHub →</a>
+      </div>
+      {{ end }}
+    {{ end }}
+
     {{ if .Date }}
       <p class="meta">{{ .Date.Format "January 2, 2006" }}</p>
     {{ end }}
