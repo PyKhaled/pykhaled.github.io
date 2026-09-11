@@ -35,7 +35,7 @@
     <a href="{{ "/blog/" | relURL }}">All articles →</a>
   </div>
 
-  <div class="card-grid">
+  <div class="card-grid writing-list">
     {{ range first 3 (where site.RegularPages "Section" "blog") }}
       <article class="card">
         <p class="eyebrow">Blog</p>
@@ -52,7 +52,7 @@
     <a href="{{ "/notes/" | relURL }}">All notes →</a>
   </div>
 
-  <div class="card-grid">
+  <div class="card-grid writing-list">
     {{ range first 3 (where site.RegularPages "Section" "notes") }}
       <article class="card">
         <p class="eyebrow">Note</p>

@@ -3,8 +3,9 @@
     <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
 
     <nav aria-label="Main navigation">
+      {{ $currentPage := . }}
       {{ range site.Menus.main }}
-        <a href="{{ .URL }}">{{ .Name }}</a>
+        <a href="{{ .URL }}"{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a>
       {{ end }}
     </nav>
   </div>
