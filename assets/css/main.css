@@ -1,0 +1,160 @@
+:root {
+  --max-width: 1040px;
+  --space: 1.25rem;
+  --border: #d7d7d7;
+  --text-muted: #666;
+  --surface: #f7f7f7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+.container {
+  width: min(var(--max-width), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header,
+.site-footer {
+  border-color: var(--border);
+  border-style: solid;
+  border-width: 0;
+}
+
+.site-header { border-bottom-width: 1px; }
+
+.site-footer {
+  border-top-width: 1px;
+  margin-top: 4rem;
+  padding: 2rem 0;
+}
+
+.header-inner,
+.section-heading,
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header-inner,
+.section-heading {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-inner { min-height: 64px; }
+
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a,
+.section-heading a,
+.footer-links a {
+  text-decoration: none;
+}
+
+main { padding: 4rem 0; }
+
+section + section {
+  margin-top: 4rem;
+}
+
+.hero {
+  padding: 2rem 0 4rem;
+  max-width: 760px;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  max-width: 760px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .8rem;
+  color: var(--text-muted);
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+}
+
+.meta {
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
+.actions {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  padding: .7rem 1rem;
+  border: 1px solid currentColor;
+  text-decoration: none;
+  border-radius: .45rem;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: .6rem;
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+.content {
+  max-width: 760px;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.notice {
+  max-width: 760px;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: .5rem;
+}
+
+.related {
+  margin-top: 4rem;
+}
+
+.plain-list {
+  padding-left: 1.1rem;
+}

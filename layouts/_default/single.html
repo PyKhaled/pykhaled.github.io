@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article>
+  <header class="page-header">
+    <p class="eyebrow">{{ .Section | title }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+
+    {{ if .Date }}
+      <p class="meta">{{ .Date.Format "January 2, 2006" }}</p>
+    {{ end }}
+  </header>
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+
+  {{ if .Params.medium_url }}
+  <aside class="notice">
+    Also available on
+    <a href="{{ .Params.medium_url }}" rel="noopener">Medium</a>.
+  </aside>
+  {{ end }}
+
+  {{ partial "related.html" . }}
+</article>
+{{ end }}

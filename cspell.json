@@ -1,0 +1,36 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Ahmed",
+    "canonicalURL",
+    "Celery",
+    "Dependabot",
+    "DevOps",
+    "Django",
+    "DRF",
+    "FastAPI",
+    "GitHub",
+    "GitLab",
+    "Gitleaks",
+    "helpdesk",
+    "hijack",
+    "Hugo",
+    "Kubernetes",
+    "Lighthouse",
+    "Nexus",
+    "OpenGraph",
+    "Overseer",
+    "PostgreSQL",
+    "pykhaled",
+    "Redis",
+    "storages",
+    "Terraform"
+  ],
+  "ignorePaths": [
+    "public/**",
+    "themes/**",
+    "node_modules/**",
+    "resources/**"
+  ]
+}

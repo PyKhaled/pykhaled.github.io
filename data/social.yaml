@@ -1,0 +1,19 @@
+github:
+  label: GitHub
+  url: "https://github.com/pykhaled"
+  description: "Code, open-source projects, experiments, and engineering tools."
+
+medium:
+  label: Medium
+  url: "https://medium.com/@pykhaled"
+  description: "Long-form technical writing and essays."
+
+linkedin:
+  label: LinkedIn
+  url: "https://www.linkedin.com/in/yourusername/"
+  description: "Professional background, leadership, and career updates."
+
+email:
+  label: Email
+  url: "mailto:you@example.com"
+  description: "Get in touch directly."
