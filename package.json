@@ -6,7 +6,7 @@
     "spellcheck": "cspell \"content/**/*.md\" \"README.md\""
   },
   "devDependencies": {
-    "cspell": "^8.17.5",
+    "cspell": "^10.3.0",
     "markdownlint-cli2": "^0.17.2"
   }
 }
