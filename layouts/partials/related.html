@@ -1,0 +1,17 @@
+{{ if .IsPage }}
+  {{ $related := site.RegularPages.Related . | first 4 }}
+  {{ with $related }}
+  <section class="related">
+    <h2>Related</h2>
+    <div class="card-grid">
+      {{ range . }}
+      <article class="card">
+        <p class="eyebrow">{{ .Section | title }}</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+{{ end }}

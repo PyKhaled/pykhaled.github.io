@@ -1,0 +1,68 @@
+baseURL = "https://pykhaled.github.io/"
+languageCode = "en-us"
+title = "Ahmed Khaled"
+
+enableRobotsTXT = true
+enableGitInfo = true
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params]
+  author = "Ahmed Khaled"
+  description = "Software engineering, architecture, engineering leadership, developer tooling, and personal projects."
+  headline = "Software Engineer · Engineering Leader · Builder"
+  github = "https://github.com/pykhaled"
+  medium = "https://medium.com/@pykhaled"
+  linkedin = "https://www.linkedin.com/in/yourusername/"
+  email = "mailto:you@example.com"
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[services]
+  [services.rss]
+    limit = 20
+
+[menus]
+  [[menus.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 20
+
+  [[menus.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 30
+
+  [[menus.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 40
+
+  [[menus.main]]
+    name = "Notes"
+    pageRef = "/notes"
+    weight = 50
+
+  [[menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 60
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false

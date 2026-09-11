@@ -1,0 +1,10 @@
+{
+  "name": "ahmed-personal-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint:markdown": "npx --yes markdownlint-cli2@0.17.2 \"**/*.md\"",
+    "spellcheck": "npx --yes cspell@8.17.5 \"content/**/*.md\" \"README.md\"",
+    "check:content": "python scripts/validate_content.py"
+  }
+}
