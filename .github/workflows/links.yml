@@ -1,25 +1,27 @@
-name: Links
+name: Link Check
 
 on:
   pull_request:
-    branches: ["main"]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  links:
+  lychee:
+    name: Check links
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Check Markdown links
+      - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
           args: >-
             --no-progress
-            --exclude-mail
-            "content/**/*.md"
-            "README.md"
+            content/**/*.md
+            README.md
