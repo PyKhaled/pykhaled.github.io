@@ -1,0 +1,12 @@
+{
+  "name": "ahmed-personal-site",
+  "private": true,
+  "scripts": {
+    "lint:markdown": "markdownlint-cli2 \"**/*.md\"",
+    "spellcheck": "cspell \"content/**/*.md\" \"README.md\""
+  },
+  "devDependencies": {
+    "cspell": "^8.17.5",
+    "markdownlint-cli2": "^0.17.2"
+  }
+}

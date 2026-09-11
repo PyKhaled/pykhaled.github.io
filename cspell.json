@@ -1,0 +1,31 @@
+{
+  "version": "0.2",
+  "language": "en,en-GB,en-US",
+  "useGitignore": true,
+  "ignorePaths": [
+    "public/**",
+    "resources/**",
+    "themes/**",
+    "node_modules/**",
+    ".git/**"
+  ],
+  "words": [
+    "Django",
+    "FastAPI",
+    "PostgreSQL",
+    "Redis",
+    "Celery",
+    "Kubernetes",
+    "Terraform",
+    "DevOps",
+    "GitHub",
+    "GitLab",
+    "Hugo",
+    "frontmatter",
+    "shortcode",
+    "shortcodes",
+    "SaaS",
+    "API",
+    "APIs"
+  ]
+}

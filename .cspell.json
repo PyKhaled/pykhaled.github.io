@@ -1,0 +1,26 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Ahmed",
+    "Django",
+    "FastAPI",
+    "PostgreSQL",
+    "Redis",
+    "Celery",
+    "Kubernetes",
+    "Terraform",
+    "DevOps",
+    "GitHub",
+    "GitLab",
+    "Hugo",
+    "Nexus",
+    "Overseer"
+  ],
+  "ignorePaths": [
+    "public/**",
+    "themes/**",
+    "node_modules/**",
+    "resources/**"
+  ]
+}

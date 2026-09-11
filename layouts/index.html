@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="hero">
+  <p class="eyebrow">Personal website</p>
+  <h1>{{ site.Data.profile.name }}</h1>
+  <p class="lead">{{ site.Data.profile.headline }}</p>
+  <p>{{ site.Data.profile.bio }}</p>
+
+  <div class="actions">
+    <a class="button" href="{{ "/projects/" | relURL }}">View Projects</a>
+    <a class="button secondary" href="{{ "/blog/" | relURL }}">Read Blog</a>
+  </div>
+</section>
+
+<section>
+  <h2>Latest Writing</h2>
+  <div class="card-grid">
+    {{ range first 3 (where site.RegularPages "Section" "blog") }}
+      <article class="card">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <div class="card-grid">
+    {{ range first 3 (where site.RegularPages "Section" "projects") }}
+      <article class="card">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
