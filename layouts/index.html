@@ -1,0 +1,96 @@
+{{ define "main" }}
+
+<section class="hero">
+  <p class="eyebrow">Personal website</p>
+  <h1>{{ site.Data.profile.name }}</h1>
+  <p class="lead">{{ site.Data.profile.headline }}</p>
+  <p>{{ site.Data.profile.bio }}</p>
+
+  <div class="actions">
+    <a class="button" href="{{ "/projects/" | relURL }}">Explore my work</a>
+    <a class="button secondary" href="{{ "/blog/" | relURL }}">Read my writing</a>
+  </div>
+</section>
+
+<section>
+  <div class="section-heading">
+    <h2>Featured Work</h2>
+    <a href="{{ "/projects/" | relURL }}">All projects →</a>
+  </div>
+
+  <div class="card-grid">
+    {{ range first 3 (where (where site.RegularPages "Section" "projects") "Params.featured" true) }}
+      <article class="card">
+        <p class="eyebrow">Project</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section>
+  <div class="section-heading">
+    <h2>Latest Writing</h2>
+    <a href="{{ "/blog/" | relURL }}">All articles →</a>
+  </div>
+
+  <div class="card-grid">
+    {{ range first 3 (where site.RegularPages "Section" "blog") }}
+      <article class="card">
+        <p class="eyebrow">Blog</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section>
+  <div class="section-heading">
+    <h2>Engineering Notes</h2>
+    <a href="{{ "/notes/" | relURL }}">All notes →</a>
+  </div>
+
+  <div class="card-grid">
+    {{ range first 3 (where site.RegularPages "Section" "notes") }}
+      <article class="card">
+        <p class="eyebrow">Note</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section>
+  <h2>What I Work With</h2>
+
+  <div class="card-grid">
+    {{ range site.Data.expertise }}
+      <article class="card">
+        <h3>{{ .group }}</h3>
+        <ul class="plain-list">
+          {{ range .items }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section>
+  <h2>Elsewhere</h2>
+
+  <div class="card-grid">
+    {{ range site.Data.social }}
+      <article class="card">
+        <h3><a href="{{ .url }}" rel="me noopener">{{ .label }}</a></h3>
+        <p>{{ .description }}</p>
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

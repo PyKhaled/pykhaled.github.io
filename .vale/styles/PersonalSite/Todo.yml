@@ -1,0 +1,8 @@
+extends: existence
+message: "Remove editorial placeholder '%s' before publishing."
+level: warning
+ignorecase: true
+tokens:
+  - TODO
+  - FIXME
+  - TBD

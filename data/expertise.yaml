@@ -1,0 +1,23 @@
+- group: Backend
+  items:
+    - Django
+    - FastAPI
+    - PostgreSQL
+    - Redis
+    - Celery
+
+- group: Platform
+  items:
+    - Docker
+    - Kubernetes
+    - AWS
+    - Terraform
+    - CI/CD
+
+- group: Engineering
+  items:
+    - Architecture
+    - Engineering Systems
+    - Developer Experience
+    - Technical Leadership
+    - Team Development
