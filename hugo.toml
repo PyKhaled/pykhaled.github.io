@@ -17,9 +17,12 @@ enableGitInfo = true
   description = "Software engineering, architecture, engineering leadership, developer tooling, and personal projects."
   headline = "Software Engineer · Engineering Leader · Builder"
   github = "https://github.com/pykhaled"
-  medium = "https://medium.com/@pykhaled"
-  linkedin = "https://www.linkedin.com/in/yourusername/"
-  email = "mailto:you@example.com"
+  medium = "https://medium.com/pykhaled"
+  linkedin = "https://linkedin.com/in/pykhaled"
+  facebook = "https://facebook.com/pykhaled"
+  twitter = "https://twitter.com/pykhaled"
+  instagram = "https://instagram.com/pykhaled"
+  email = "mailto:ahmedaka@icloud.com"
 
 [params.analytics]
   googleMeasurementID = "G-GZPV20DYZH"

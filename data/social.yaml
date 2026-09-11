@@ -5,15 +5,30 @@ github:
 
 medium:
   label: Medium
-  url: "https://medium.com/@pykhaled"
+  url: "https://medium.com/pykhaled"
   description: "Long-form technical writing and essays."
 
 linkedin:
   label: LinkedIn
-  url: "https://www.linkedin.com/in/yourusername/"
+  url: "https://linkedin.com/in/pykhaled"
   description: "Professional background, leadership, and career updates."
 
 email:
   label: Email
-  url: "mailto:you@example.com"
+  url: "mailto:ahmedaka@icloud.com"
   description: "Get in touch directly."
+
+facebook:
+  label: Facebook
+  url: "https://facebook.com/pykhaled"
+  description: "Connect with me on Facebook."
+
+twitter:
+  label: Twitter
+  url: "https://twitter.com/pykhaled"
+  description: "Short updates and conversations."
+
+instagram:
+  label: Instagram
+  url: "https://instagram.com/pykhaled"
+  description: "Photos and everyday moments."
