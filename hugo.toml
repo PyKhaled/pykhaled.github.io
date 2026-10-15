@@ -13,6 +13,7 @@ enableGitInfo = true
   category = "categories"
 
 [params]
+  comingSoon = true
   author = "Ahmed Khaled"
   description = "Software engineering, architecture, engineering leadership, developer tooling, and personal projects."
   headline = "Software Engineer · Engineering Leader · Builder"

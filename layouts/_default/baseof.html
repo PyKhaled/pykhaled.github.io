@@ -3,8 +3,14 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
+<body{{ if and .IsHome site.Params.comingSoon }} class="coming-soon-page"{{ end }}>
   {{ partial "header.html" . }}
+
+  {{ if and site.Params.comingSoon (not .IsHome) }}
+  <aside class="preview-notice" aria-label="Website status">
+    <div class="container">This website is a work in progress and is not the final version. <a href="{{ "/" | relURL }}">Coming soon →</a></div>
+  </aside>
+  {{ end }}
 
   <main class="container">
     {{ block "main" . }}{{ end }}

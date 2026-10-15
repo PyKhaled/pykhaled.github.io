@@ -87,3 +87,27 @@ section + section { margin-top: 3.5rem; }
   section + section { margin-top: 2.5rem; }
   .card { padding: 1.25rem; }
 }
+
+/* Temporary landing page; disable with params.comingSoon in hugo.toml. */
+.header-preview { color: var(--text-muted); font-size: .75rem; letter-spacing: .04em; }
+.preview-notice { padding: .8rem 0; background: #e8eee8; color: #244c43; font-size: .85rem; }
+.preview-notice a { white-space: nowrap; font-weight: 600; }
+.coming-soon-page { min-height: 100svh; display: flex; flex-direction: column; }
+.coming-soon-page main { flex: 1; }
+.coming-soon { padding: clamp(2rem, 7vw, 5rem) 0 2rem; max-width: 820px; }
+.coming-soon-status { display: flex; align-items: center; gap: .65rem; }
+.coming-soon-status span { width: .5rem; height: .5rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px #27645a12; }
+.coming-soon h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(2.8rem, 7.8vw, 5.6rem); line-height: 1.06; letter-spacing: -.055em; margin: 2rem 0; }
+.coming-soon-period { color: var(--accent); }
+.coming-soon-label { display: inline-block; padding: .2rem .7rem; border: 1px solid #becfc7; border-radius: 3px; color: var(--accent); font-size: .8rem; font-weight: 600; margin: 0; }
+.coming-soon .lead { max-width: 620px; margin: 1.25rem 0 1rem; font-size: 1.2rem; }
+.coming-soon > p:not(.eyebrow):not(.coming-soon-label):not(.lead) { max-width: 580px; color: var(--text-muted); }
+.coming-soon .actions { gap: 1rem; }
+.coming-soon .button span { margin-left: .6rem; }
+.coming-soon .coming-soon-footnote { margin-top: 2rem; font-size: .8rem; }
+.coming-soon-page .site-footer { margin-top: 1rem; }
+@media (max-width: 600px) {
+  .header-preview { font-size: .65rem; }
+  .coming-soon .lead { font-size: 1.05rem; }
+  .coming-soon h1 { margin-top: 1.5rem; }
+}

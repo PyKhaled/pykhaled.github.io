@@ -2,11 +2,15 @@
   <div class="container header-inner">
     <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
 
+    {{ if and .IsHome site.Params.comingSoon }}
+    <span class="header-preview">Personal website · Preview</span>
+    {{ else }}
     <nav aria-label="Main navigation">
       {{ $currentPage := . }}
       {{ range site.Menus.main }}
         <a href="{{ .URL }}"{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a>
       {{ end }}
     </nav>
+    {{ end }}
   </div>
 </header>

@@ -1,4 +1,18 @@
 {{ define "main" }}
+{{ if site.Params.comingSoon }}
+<section class="coming-soon" aria-labelledby="coming-soon-title">
+  <p class="eyebrow coming-soon-status"><span aria-hidden="true"></span> A work in progress</p>
+  <h1 id="coming-soon-title">Something good<br>is taking shape<span class="coming-soon-period">.</span></h1>
+  <p class="coming-soon-label">Coming soon</p>
+  <p class="lead">You’re seeing an early version of my personal website. The design and content are still evolving — this is not the final version.</p>
+  <p>I’m putting together a home for my work, writing, and engineering notes. Thanks for stopping by while I build.</p>
+  <div class="actions">
+    <a class="button" href="{{ site.Params.email }}">Get in touch <span aria-hidden="true">↗</span></a>
+    <a class="button secondary" href="{{ site.Params.github }}" rel="me noopener">Find me on GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+  <p class="coming-soon-footnote">In the meantime, feel free to say hello.</p>
+</section>
+{{ else }}
 
 <section class="hero">
   <p class="eyebrow">Personal website</p>
@@ -93,4 +107,5 @@
   </div>
 </section>
 
+{{ end }}
 {{ end }}
